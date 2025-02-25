@@ -12,8 +12,7 @@ public class EmployeeController {
         return "Employee data";
     }
 
-    @Autowired
-    private EmployeeServices employeeService;
+    
 
     @PostMapping("/add")
     public String add(@RequestBody Employee employee) {
