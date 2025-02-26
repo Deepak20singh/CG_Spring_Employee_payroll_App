@@ -23,7 +23,10 @@ private EmployeeRepository employeeRepository;
             employeeRepository.deleteById(id);
             return true;
         }
-        return false;
+        else {
+            throw new EmployeeNotFound("Employee not found");
+        }
+
     }
     public List<Employee> fetchAll(){
 
@@ -34,9 +37,8 @@ private EmployeeRepository employeeRepository;
       return employeeRepository.findById(id).map(employee -> {employee.setName(updateEmployee.getName());
           employee.setSalary(updateEmployee.getSalary());
           return employeeRepository.save(employee);
-      }).orElse(null);
+      }).orElseThrow(() -> new EmployeeNotFound("Employee not found"));
     }
     public Optional<Employee> check(long id){
-        return employeeRepository.findById(id);
-    }
-}
+        return Optional.ofNullable(employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFound("Employee not found.")));
+    }}
