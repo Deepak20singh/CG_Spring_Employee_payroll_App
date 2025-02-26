@@ -1,4 +1,5 @@
 package com.bridgeLabz.employeepayrollapp;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class EmployeeController {
     private EmployeeServices employeeService;
 
     @PostMapping("/add")
-    public Employee add(@RequestBody Employee employee) {
+    public Employee add(@Valid @RequestBody Employee employee) {
         return employeeService.add(employee);
     }
 
