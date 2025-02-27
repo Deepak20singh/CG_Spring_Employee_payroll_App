@@ -21,3 +21,6 @@ public class EmployeepayrollappApplication {
 
 	}
 }
+//debug contains complete info  dev
+//info contains only imp info  info
+//warn contains warning prod
