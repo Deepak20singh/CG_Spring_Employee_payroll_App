@@ -462,3 +462,101 @@ Caused by: java.time.format.DateTimeParseException: Text '27-02-2024' could not 
 2025-02-27T15:14:53.154+05:30  INFO 4140 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Started EmployeepayrollappApplication in 6.054 seconds (process running for 6.765)
 2025-02-27T15:14:53.160+05:30  INFO 4140 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Application has started in DEV environment
 2025-02-27T15:14:53.162+05:30  INFO 4140 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Employee Payroll DB User is payrolluser
+2025-02-27T15:34:27.653+05:30  WARN 4140 --- [employeepayrollapp] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m6s283ms944µs100ns).
+2025-02-27T16:19:59.006+05:30  INFO 19404 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Starting EmployeepayrollappApplication using Java 23.0.2 with PID 19404 (C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp\target\classes started by HP in C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp)
+2025-02-27T16:19:59.008+05:30 DEBUG 19404 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27T16:19:59.010+05:30  INFO 19404 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : The following 1 profile is active: "dev"
+2025-02-27T16:20:05.352+05:30  INFO 19404 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Started EmployeepayrollappApplication in 7.07 seconds (process running for 7.823)
+2025-02-27T16:20:05.358+05:30  INFO 19404 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Application has started in DEV environment
+2025-02-27T16:20:05.361+05:30  INFO 19404 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Employee Payroll DB User is payrolluser
+2025-02-27T16:22:18.254+05:30 ERROR 19404 --- [employeepayrollapp] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class com.bridgeLabz.employeepayrollapp.Employee]] with root cause
+
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.bridgeLabz.employeepayrollapp.Employee` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 2, column: 3]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1888) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:414) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1375) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1512) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:348) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2125) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:398) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:357) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:226) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1575) ~[na:na]
+
+2025-02-27T16:23:51.200+05:30  INFO 6972 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Starting EmployeepayrollappApplication using Java 23.0.2 with PID 6972 (C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp\target\classes started by HP in C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp)
+2025-02-27T16:23:51.204+05:30 DEBUG 6972 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27T16:23:51.205+05:30  INFO 6972 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : The following 1 profile is active: "dev"
+2025-02-27T16:23:56.698+05:30  INFO 6972 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Started EmployeepayrollappApplication in 6.188 seconds (process running for 6.828)
+2025-02-27T16:23:56.704+05:30  INFO 6972 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Application has started in DEV environment
+2025-02-27T16:23:56.707+05:30  INFO 6972 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Employee Payroll DB User is payrolluser
+2025-02-27T16:24:59.933+05:30  INFO 14708 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Starting EmployeepayrollappApplication using Java 23.0.2 with PID 14708 (C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp\target\classes started by HP in C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp)
+2025-02-27T16:24:59.936+05:30 DEBUG 14708 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27T16:24:59.937+05:30  INFO 14708 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : The following 1 profile is active: "dev"
+2025-02-27T16:25:05.398+05:30  INFO 14708 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Started EmployeepayrollappApplication in 6.125 seconds (process running for 6.759)
+2025-02-27T16:25:05.403+05:30  INFO 14708 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Application has started in DEV environment
+2025-02-27T16:25:05.405+05:30  INFO 14708 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Employee Payroll DB User is payrolluser
+2025-02-27T16:31:19.918+05:30  INFO 10012 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Starting EmployeepayrollappApplication using Java 23.0.2 with PID 10012 (C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp\target\classes started by HP in C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp)
+2025-02-27T16:31:19.923+05:30 DEBUG 10012 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27T16:31:19.924+05:30  INFO 10012 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : The following 1 profile is active: "dev"
+2025-02-27T16:31:25.366+05:30  INFO 10012 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Started EmployeepayrollappApplication in 6.137 seconds (process running for 6.847)
+2025-02-27T16:31:25.390+05:30  INFO 10012 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Application has started in DEV environment
+2025-02-27T16:31:25.392+05:30  INFO 10012 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Employee Payroll DB User is payrolluser
+2025-02-27T16:31:55.869+05:30  INFO 15284 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Starting EmployeepayrollappApplication using Java 23.0.2 with PID 15284 (C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp\target\classes started by HP in C:\Users\HP\Downloads\employeepayrollapp\employeepayrollapp)
+2025-02-27T16:31:55.873+05:30 DEBUG 15284 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-02-27T16:31:55.874+05:30  INFO 15284 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : The following 1 profile is active: "dev"
+2025-02-27T16:32:01.362+05:30  INFO 15284 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Started EmployeepayrollappApplication in 6.172 seconds (process running for 6.794)
+2025-02-27T16:32:01.367+05:30  INFO 15284 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Application has started in DEV environment
+2025-02-27T16:32:01.369+05:30  INFO 15284 --- [employeepayrollapp] [restartedMain] c.b.e.EmployeepayrollappApplication      : Employee Payroll DB User is payrolluser
