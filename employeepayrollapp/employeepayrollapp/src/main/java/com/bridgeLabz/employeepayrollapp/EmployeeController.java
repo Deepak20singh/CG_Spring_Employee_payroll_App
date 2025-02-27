@@ -36,7 +36,7 @@ public class EmployeeController {
     return employeeService.fetchAll();
 }
 @GetMapping("/get/{id}")
-    public Optional<Employee> checking(@PathVariable Long id){
+    public Employee checking(@PathVariable Long id){
 
         return employeeService.check(id);
 }
