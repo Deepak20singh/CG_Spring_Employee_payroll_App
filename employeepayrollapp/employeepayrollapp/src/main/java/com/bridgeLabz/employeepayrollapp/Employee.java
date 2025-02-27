@@ -1,11 +1,11 @@
 package com.bridgeLabz.employeepayrollapp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -20,10 +20,22 @@ public class Employee {
     private String name;
 @Min(value=500,message="Min Wage should be more than 500")
     private double salary;
+@Pattern(regexp = "male|female", message = "Please enter valid gender")
 public String gender;
-public String startDate;
-public String note;
-public String profilePic;
-public List<String> department;
+
+@JsonFormat(pattern = "dd-MM-yyyy")
+@NotNull(message = "startDate should Not be Empty")
+@PastOrPresent(message = "startDate should be past or today date")
+
+public LocalDate startDate;
+
+    @NotBlank(message = "Note cannot be empty")
+    public String note;
+
+    @NotBlank(message = "Profile Pic cannot be empty")
+    public String profilePic;
+
+    @NotEmpty(message = "Department cannot be empty")
+    public List<String> department;
 
 }
